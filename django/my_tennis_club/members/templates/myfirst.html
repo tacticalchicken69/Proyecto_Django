@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Información de Django</title>
+    
+    <!-- Estilos CSS directamente en el HTML -->
+    <style>
+        /* Estilos generales para el cuerpo de la página */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5; /* Un gris muy claro */
+            color: #333;
+        }
+
+        /* Contenedor principal que usa Flexbox para alinear la barra lateral y el contenido */
+        #container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Barra lateral de navegación */
+        #sidebar {
+            width: 240px;
+            background-color: #1e293b; /* Azul marino oscuro */
+            color: white;
+            padding: 20px;
+            flex-shrink: 0; /* Evita que la barra se encoja */
+        }
+
+        #sidebar h1 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #sidebar li {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo de los botones del menú */
+        .sidebar-btn {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: transparent;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            text-align: left;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        /* Efecto al pasar el ratón sobre los botones */
+        .sidebar-btn:hover {
+            background-color: #334155;
+        }
+
+        /* Estilo para el botón activo */
+        .sidebar-btn.active {
+            background-color: #0ea5e9; /* Azul cielo */
+            font-weight: bold;
+        }
+
+        /* Contenido principal */
+        #main-content {
+            flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+            padding: 40px;
+        }
+
+        /* Cada una de las secciones de contenido */
+        .content-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Clase para ocultar secciones */
+        .hidden {
+            display: none;
+        }
+
+        .content-section h2 {
+            margin-top: 0;
+            font-size: 2em;
+            color: #1e293b;
+            border-bottom: 2px solid #0ea5e9;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .content-section p, .content-section ul {
+            line-height: 1.6;
+        }
+
+        /* Estilo para el placeholder de la imagen */
+        .image-placeholder {
+            margin-top: 25px;
+            padding: 30px;
+            text-align: center;
+            background-color: #f7f7f7;
+            border: 2px dashed #ccc;
+            border-radius: 8px; /* Bordes redondeados */
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <!-- barra lateral de navegación añañai -->
+        <aside id="sidebar">
+            <h1>Django</h1>
+            <nav>
+                <ul>
+                    
+                    <li><button data-target="que-es" class="sidebar-btn active">Qué es Django</button></li>
+                    <li><button data-target="funcion" class="sidebar-btn">Función de Django</button></li>
+                    <li><button data-target="estructura" class="sidebar-btn">Estructura Django</button></li>
+                    <li><button data-target="ventajas" class="sidebar-btn">Ventajas y Desventajas</button></li>
+                    <li><button data-target="ejemplos" class="sidebar-btn">Ejemplos</button></li>
+                </ul>
+            </nav>
+        </aside>
+
+       
+
+
+        <main id="main-content">
+           
+
+            
+            <div id="que-es" class="content-section">
+                <h2>¿Qué es Django?</h2>
+                <p>Django es un es una estructura
+                 base para desarrollar software. Proporciona un
+                 conjunto de herramientas, bibliotecas de código y,
+                  fundamentalmente, un conjunto de convenciones que
+                simplifican el proceso de desarrollo. Permite a los
+                desarrolladores centrarse en la lógica de negocio (las
+                características únicas de la aplicación) en lugar de en
+                la infraestructura común..</p>
+                <p>Lenguaje de Programación
+                Python.</p>
+                <p> Famoso por su filosofía "baterías
+                incluidas".</p>
+
+
+                <center>
+                 <img src="https://i.pinimg.com/736x/03/a6/fd/03a6fd6b3c8bb8f64c993af1eb2f0bb9.jpg" alt="Django Logo" style="width:45%; border-radius: 8px;" /> -->
+                </center>
+            </div>
+
+            <!-- Sección: Función de Django (oculta) -->
+            <div id="funcion" class="content-section hidden">
+                <h2>Función de Django</h2>
+                <p>La función principal de Django es servir como un framework web de alto nivel en Python que facilita el desarrollo rápido, seguro y escalable de aplicaciones y sitios web siguiendo con un patrón MVC</p>
+                <ul>
+                    <li><strong>Modelo:</strong> Controla el comportamiento de los datos.</li>
+                    <li> Define los datos almacenados.</li>
+                    <li> Se encuentra en forma de clases de Python(el modelo es un objeto).</li>
+                    <li> Cada tipo de dato que debe ser almacenado se encuentra en una variable con ciertos parámetros.</li>
+                    <li> Posee métodos para la gestión de los datos.</li>
+                    <li><strong>Vista:</strong> Se presenta en forma de funciones o clases en Python</li>
+                    <li> su propósito es determinar que datos serán visualizados.</li>
+                    <li> El ORM de Django permite escribir código Python en lugar de SQL para hacer las consultas que necesita la vista. La vista también se encarga de tareas conocidas como el envío de correo electrónico, la autenticación con servicios externos y la validación de datos a través de formularios. Lo mas importante a entender con respecto a la vista es que no tiene nada que ver con el estilo de presentación de los datos, sólo se encarga de los datos, la presentación es tarea de la plantilla.</li>
+                    <li><strong>Plantilla (Template/controlador):</strong> Es básicamente una página HTML con algunas etiquetas extras propias de Django, no solamente crea contenido en HTML (también XML, CSS, Javascript, CSV, etc).</li>
+                    <li> La plantilla(Template) recibe los datos de la vista y luego los organiza para la presentación al navegador web. Las etiquetas que Django usa para las plantillas permiten que sea flexible para los diseñadores del frontend, incluso tiene estructuras de datos como if, por por si es necesaria una presentación lógica de los datos, estas estructuras son limitadas para evitar un desorden poniendo cualquier tipo de código Python.</li>
+                </ul>
+                <center>
+                <img src="https://www.maestrosdelweb.com/images/2012/04/esquema-mtv.png" alt="Django Logo" style="width:45%; border-radius: 8px;" /> -->
+                </center>
+            </div>
+
+
+
+            <!-- Sección: Estructura Django (oculta) -->
+            <div id="estructura" class="content-section hidden">
+                <h2>Estructura de un Proyecto Django</h2>
+                <p>Un proyecto Django se organiza en "proyectos" y "apps". Un proyecto puede contener múltiples apps, y cada app se encarga de una funcionalidad específica.</p>
+                <p>Una estructura típica incluye:</p>
+                <ul>
+                    <li><strong>Proyecto principal:</strong> Contiene la configuración global (settings.py), las URLs principales (urls.py), etc.</li>
+                    <li><strong>Apps:</strong> Cada app tiene sus propios modelos, vistas, plantillas y URLs.</li>
+                </ul>
+                <center>
+                <img src="https://i.redd.it/utfwqqawcre81.jpg" alt="estructura" style="width:45%; border-radius: 8px;" /> -->
+                 </center>
+            </div>
+
+
+
+            <!-- Sección: Ventajas y Desventajas (oculta) -->
+            <div id="ventajas" class="content-section hidden">
+                <h2>Ventajas y Desventajas</h2>
+                <h3>Ventajas</h3>
+                <ul>
+                    <li>Desarrollo Rápido</li>
+                    <li>Seguridad integrada</li>
+                    <li>El ORM de Django es, hasta ahora, el más fácil y rápido de aprender. El shell de Django también es una herramienta increíble, ayuda mucho. Está diseñado pensando en trabajos regulares que inicias con cron. El framework de testing lo tiene todo (incluso crea y destruye bases de datos temporales). En cualquier otro framework, probablemente tendrías que crear una solución alternativa tú mismo. Hay un framework genial que puedes agregar encima llamado Django ninja, te permite usar Django como una app codificada al estilo FastAPI (serializadores Pydantic) con todos los beneficios de Django.</li>
+                    <li>Gran Comunidad y Documentación</li>
+                    <center>
+                <img src="https://pbs.twimg.com/media/FaxVRDnXwAEp6qY.jpg" alt="estructura" style="width:45%; border-radius: 8px;" /> -->
+                    </center>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>no hay soporte totalmente asincrónico, se necesita DRF para crear un marco tranquilo. Y SSR a HTML realmente no es la forma moderna de crear aplicaciones web ahora, está en desuso. (Y no, SSR en JS es completamente diferente, y en la mayoría de los casos de uso, SPA sería mucho más rápido.</li>
+                    <li>No es ideal para arquitecturas de microservicios.</li>
+                </ul>
+                <center>
+                <img src="https://i.pinimg.com/474x/b3/d2/0d/b3d20dbc6864fe0c76f049e77f89d30f.jpg" alt="estructura" style="width:45%; border-radius: 8px;" /> -->
+                    </center>
+            </div>
+
+            <!-- Sección: Ejemplos (oculta) -->
+            <div id="ejemplos" class="content-section hidden">
+                <h2>Ejemplos de Sitios Hechos con Django</h2>
+                <p>Django es utilizado por algunas de las compañías y organizaciones más grandes del mundo. Algunos ejemplos notables incluyen:</p>
+                <ul>
+                    <li>Instagram</li>
+                    <li>Spotify</li>
+                    <li>Pinterest</li>
+                    <li>Mozilla</li>
+                    <li>National Geographic</li>
+
+                     <center>
+                <img src="https://static.tildacdn.net/tild6135-3935-4039-b838-373465656665/TXfbXzo.png" alt="estructura" style="width:45%; border-radius: 8px;" /> -->
+                    </center>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- SCRIPT PARA LA INTERACTIVIDAD DEL MENÚ -->
+    <script>
+        // Espera a que todo el HTML esté cargado para ejecutar el script
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Obtenemos todos los botones y todas las secciones de contenido
+            const sidebarButtons = document.querySelectorAll('.sidebar-btn');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // Recorremos cada botón para asignarle una función al hacer clic
+            sidebarButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    
+                    // 1. Quitar la clase "active" de todos los botones
+                    sidebarButtons.forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+
+                    // 2. Añadir la clase "active" solo al botón que se ha pulsado
+                    this.classList.add('active');
+                    
+                    // Obtenemos el ID del contenido que queremos mostrar (está en el atributo "data-target")
+                    const targetId = this.getAttribute('data-target');
+
+                    // 3. Ocultar todas las secciones de contenido
+                    contentSections.forEach(function(section) {
+                        section.classList.add('hidden');
+                    });
+
+                    // 4. Mostrar solo la sección de contenido correspondiente al botón pulsado
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
