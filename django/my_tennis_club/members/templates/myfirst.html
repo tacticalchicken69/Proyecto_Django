@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Información de Django</title>
     
-    <!-- Estilos CSS directamente en el HTML -->
+   
     <style>
         /* Estilos generales para el cuerpo de la página */
         body {
@@ -158,7 +158,6 @@
 
 
                 <div class="video-container">
-                    <!-- Para cambiar el video, solo reemplaza el código después de "embed/" -->
                     <iframe 
                         src="https://www.youtube.com/embed/srkMntDfil4" 
                         title="Video Explicativo de Django" 
@@ -168,8 +167,7 @@
                         </iframe>
                 </div>
             </div>
-
-            <!-- Sección: Función de Django (oculta) -->
+            
             <div id="funcion" class="content-section hidden">
                 <h2>Función de Django</h2>
                 <p>La función principal de Django es servir como un framework web de alto nivel en Python que facilita el desarrollo rápido, seguro y escalable de aplicaciones y sitios web siguiendo con un patrón MVC</p>
@@ -192,7 +190,7 @@
 
 
 
-            <!-- Sección: Estructura Django (oculta) -->
+           
             <div id="estructura" class="content-section hidden">
                 <h2>Estructura de un Proyecto Django</h2>
                 <p>Un proyecto Django se organiza en "proyectos" y "apps". Un proyecto puede contener múltiples apps, y cada app se encarga de una funcionalidad específica.</p>
@@ -208,7 +206,7 @@
 
 
 
-            <!-- Sección: Ventajas y Desventajas (oculta) -->
+            
             <div id="ventajas" class="content-section hidden">
                 <h2>Ventajas y Desventajas</h2>
                 <h3>Ventajas</h3>
@@ -231,7 +229,7 @@
                     </center>
             </div>
 
-            <!-- Sección: Ejemplos (oculta) -->
+            
             <div id="ejemplos" class="content-section hidden">
                 <h2>Ejemplos de Sitios Hechos con Django</h2>
                 <p>Django es utilizado por algunas de las compañías y organizaciones más grandes del mundo. Algunos ejemplos notables incluyen:</p>
@@ -250,36 +248,36 @@
         </main>
     </div>
 
-    <!-- SCRIPT PARA LA INTERACTIVIDAD DEL MENÚ -->
+    
     <script>
-        // Espera a que todo el HTML esté cargado para ejecutar el script
+        
         document.addEventListener('DOMContentLoaded', function() {
             
-            // Obtenemos todos los botones y todas las secciones de contenido
+           
             const sidebarButtons = document.querySelectorAll('.sidebar-btn');
             const contentSections = document.querySelectorAll('.content-section');
 
-            // Recorremos cada botón para asignarle una función al hacer clic
+            
             sidebarButtons.forEach(function(button) {
                 button.addEventListener('click', function() {
                     
-                    // 1. Quitar la clase "active" de todos los botones
+                    
                     sidebarButtons.forEach(function(btn) {
                         btn.classList.remove('active');
                     });
 
-                    // 2. Añadir la clase "active" solo al botón que se ha pulsado
+                    
                     this.classList.add('active');
                     
-                    // Obtenemos el ID del contenido que queremos mostrar (está en el atributo "data-target")
+                    
                     const targetId = this.getAttribute('data-target');
 
-                    // 3. Ocultar todas las secciones de contenido
+                    
                     contentSections.forEach(function(section) {
                         section.classList.add('hidden');
                     });
 
-                    // 4. Mostrar solo la sección de contenido correspondiente al botón pulsado
+                    
                     const targetSection = document.getElementById(targetId);
                     if (targetSection) {
                         targetSection.classList.remove('hidden');
