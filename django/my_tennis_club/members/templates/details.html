@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+
+  
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
+  
+<p>Phone: {{ mymember.phone }}</p>
+<p>Member since: {{ mymember.joined_date }}</p>
+<p>email: {{ mymember.email }}</p>
+<p>peso: {{ mymember.peso }}</p>
+<p>salario: {{ mymember.salario }}</p>
+<p>Back to <a href="/members">Members</a></p>
+  
+  <p>Back to <a href="/members">Members</a></p>
+  
+{% endblock %}
+
+</body>
+</html>
