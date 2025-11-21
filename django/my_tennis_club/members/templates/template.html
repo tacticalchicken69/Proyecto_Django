@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    {% for x in fruits %}
+    <h3>{{ x }}</h3>
+    {% endfor %}
+
+
+
+
+    {% with new_fruit="Orange" %}
+    <h3>new fruit {{ new_fruit }}</h3>
+    {% endwith %} 
+
+
+    <ul>
+        {% for member in mymembers %}
+        <li>{{ member.firstname }}</li>
+        {% endfor %}
+    </ul>
+
+<!-- if -->
+ {% for member in mymembers %}
+    {% if member.firstname == "Linus" %}
+        <h2>{{ member.firstname }} - {{ member.lastname }}</h2>
+    {% elif member.firstname == "Alice" %}
+        <h2>This is Alice</h2>
+    {% else %}
+        <h3>Not Linus or Alice</h3>
+    {% endif %}
+
+
+
+  </body>
+</html>
