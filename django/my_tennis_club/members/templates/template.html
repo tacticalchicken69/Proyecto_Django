@@ -1,5 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+    <head>
+        <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+    </head>
   <body>
     {% for x in fruits %}
     <h3>{{ x }}</h3>
@@ -29,7 +33,7 @@
         <h3>Not Linus or Alice</h3>
     {% endif %}
 
-
+{% endfor %}
 
   </body>
 </html>
