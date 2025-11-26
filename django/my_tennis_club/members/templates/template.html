@@ -2,38 +2,109 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Miembros y Querysets</title>
         <link rel="stylesheet" href="{% static 'mystyles.css' %}">
     </head>
-  <body>
+ <body>
     {% for x in fruits %}
     <h3>{{ x }}</h3>
     {% endfor %}
-
-
-
 
     {% with new_fruit="Orange" %}
     <h3>new fruit {{ new_fruit }}</h3>
     {% endwith %} 
 
-
+    <h2>Todos los miembros (mymembers)</h2>
     <ul>
         {% for member in mymembers %}
-        <li>{{ member.firstname }}</li>
+        <li>{{ member.firstname }} {{ member.lastname }}</li>
         {% endfor %}
     </ul>
 
-<!-- if -->
- {% for member in mymembers %}
-    {% if member.firstname == "Linus" %}
-        <h2>{{ member.firstname }} - {{ member.lastname }}</h2>
-    {% elif member.firstname == "Alice" %}
-        <h2>This is Alice</h2>
-    {% else %}
-        <h3>Not Linus or Alice</h3>
-    {% endif %}
+    <h2>Miembros con condición (if/elif/else)</h2>
+    {% for member in mymembers %}
+        {% if member.firstname == "Linus" %}
+            <h2>{{ member.firstname }} - {{ member.lastname }}</h2>
+        {% elif member.firstname == "Alice" %}
+            <h2>This is Alice</h2>
+        {% else %}
+            <h3>Not Linus or Alice</h3>
+        {% endif %}
+    {% endfor %}
 
-{% endfor %}
+    <hr>
+    
+    <h2>Miembros con firstname='uribe'</h2>
+    <ul>
+        {% for member in records_uribe %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+    </ul>
 
-  </body>
+    <hr>
+    
+    <h2>Miembros con firstname='uribe' y lastname='Westcol'</h2>
+    <ul>
+        {% for member in record_uribe_westcol %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+    <h2>Miembros con firstname='Andres' O 'Maria' (Usando Q)</h2>
+    <ul>
+        {% for member in record_OR_andres_maria %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+    <h2>Miembros cuyo firstname EMPIEZA con 'L'</h2>
+    <ul>
+        {% for member in record_like_start_L %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+    <h2>Miembros cuyo firstname TERMINA con 's'</h2>
+    <ul>
+        {% for member in record_like_ends_s %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+    <h2>Miembros cuyo lastname CONTIENE 'ez'</h2>
+    <ul>
+        {% for member in record_like_contains_ez %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+    <h2>Miembros Ordenados por Nombre (ASC)</h2>
+    <ul>
+        {% for member in order_by_asc %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+    <h2>Miembros Ordenados por Nombre (DESC)</h2>
+    <ul>
+        {% for member in order_by_desc %}
+        <li>{{ member.firstname }} - {{ member.lastname }}</li>
+        {% endfor %}
+
+        <img src="{% static 'members/motora.jpg' %}" alt="moto ob-sena" width="300">
+    </ul>
+
+ </body>
 </html>
